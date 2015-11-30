@@ -23,21 +23,21 @@ default: &default
 
 development:
   <<: *default
-  database: ruby-getting-started_development
-
+  database: d6slr4o1nr2vnj
+  #DATABASE_URL =  'ec2-54-83-202-218.compute-1.amazonaws.com'
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
   # When left blank, postgres will use the default role. This is
   # the same name as the operating system user that initialized the database.
-  #username: ruby-getting-started
+  #username: ykipxjtxndkxpl
 
   # The password associated with the postgres role (username).
-  #password:
+  #password:B0PBOlfJtm_DPf3j-h4F3DrT0r
 
   # Connect on a TCP socket. Omitted by default since the client uses a
   # domain socket that doesn't need configuration. Windows does not have
   # domain sockets, so uncomment these lines.
-  #host: localhost
+  #host: ec2-54-83-202-218.compute-1.amazonaws.com
 
   # The TCP port the server listens on. Defaults to 5432.
   # If your server runs on a different port number, change accordingly.
