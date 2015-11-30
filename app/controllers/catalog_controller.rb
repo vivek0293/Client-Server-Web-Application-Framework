@@ -1,4 +1,4 @@
-class catalogController < ApplicationController
+class CatalogController < ApplicationController
 
   # GET /welcome
   def view
