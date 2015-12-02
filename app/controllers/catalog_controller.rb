@@ -31,7 +31,7 @@ class CatalogController < ApplicationController
          con.close if con
          
      end
-  render "Welcome to UTA"
+  render :json => "Welcome to UTA"
   end
 
 end
