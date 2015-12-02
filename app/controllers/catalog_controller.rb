@@ -19,7 +19,8 @@ class CatalogController < ApplicationController
          puts "QUERY 1"
          v.each do |row|
              puts "%s %s %s %s %s %s %s" % [ row['age'], row['sex'], row['race'], row['length_of_stay'], row['stay_indicator'], row['total_charges'], row['id'] ]
-             
+             render :json => row['age']
+
          end
 
          rescue PG::Error => e
