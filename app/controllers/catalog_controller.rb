@@ -19,6 +19,7 @@ class CatalogController < ApplicationController
          puts "QUERY 1"
          v.each do |row|
              puts "%s %s %s %s %s %s %s" % [ row['age'], row['sex'], row['race'], row['length_of_stay'], row['stay_indicator'], row['total_charges'], row['id'] ]
+             
          end
 
          rescue PG::Error => e
@@ -30,6 +31,7 @@ class CatalogController < ApplicationController
          con.close if con
          
      end
+  render "Welcome to UTA"
   end
 
 end
