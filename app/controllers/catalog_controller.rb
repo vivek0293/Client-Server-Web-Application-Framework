@@ -17,9 +17,11 @@ class CatalogController < ApplicationController
          v = con.exec("SELECT AGE,SEX,RACE, LENGTH_OF_STAY, STAY_INDICATOR, TOTAL_CHARGES, ID from health where ID = '%d'" % [i])
          
          puts "QUERY 1"
+    
          v.each do |row|
              puts "%s %s %s %s %s %s %s" % [ row['age'], row['sex'], row['race'], row['length_of_stay'], row['stay_indicator'], row['total_charges'], row['id'] ]
-             render :json => row['age']
+             H = Hash["a" => row['age'], "b" => row['sex'], "c" => row['race'], "d" => row['length_of_stay'], "e" => row['total_charges'], "f" => row['id']]
+             render :json => H
 
          end
 
