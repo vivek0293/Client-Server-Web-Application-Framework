@@ -24,9 +24,11 @@
        var app = angular.module('myApp', []);
        app.controller('myController', ['$scope', '$http', '$interval',function($scope, $http, $interval) {
        var id = 1;
+       $interval(function(){
        $http.get('/products/'+id).success(function(data) {
        $scope.items = data;
        id++;
+      });
       },500);
       
   
@@ -42,13 +44,13 @@
          <table> 
           <tr ng-repeat="item in items">
             
-          <td>{{ item.age}}</td>
+          <td>{{ item.row['age']}}</td>
           
-          <td>{{ item.sex}}</td>
+          <td>{{ item.row['sex']}}</td>
           
-          <td>{{ item.race}}</td>
+          <td>{{ item.row['race']}}</td>
           
-          <td>{{ item.length_of_stay}}</td>
+          <td>{{ item.row['length_of_stay']}}</td>
           
           
           </tr>
