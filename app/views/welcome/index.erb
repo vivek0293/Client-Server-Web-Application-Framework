@@ -25,11 +25,11 @@
        app.controller('myController', ['$scope', '$http', '$interval',function($scope, $http, $interval) {
        var id = 1;
        $interval(function(){
-       $http.get('/products/'+id).success(function(data) {
+       
        $scope.message="This DIV is refreshed "+id+" time.";
        $scope.items = data;
        id++;
-      });
+      
       },500);
       
   
