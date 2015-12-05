@@ -25,11 +25,10 @@
        app.controller('myController', ['$scope', '$http', '$interval',function($scope, $http, $interval) {
        var id = 1;
        $interval(function(){
-       
-       $scope.message="This DIV is refreshed "+id+" time.";
+       $http.get('/products/'+id).success(function(data) {
        $scope.items = data;
        id++;
-      
+      });
       },500);
       
   
@@ -38,7 +37,7 @@
     </script>
   </head>
 
-  <!-- <body ng-controller="myController">
+  <body ng-controller="myController">
      <div ng-app="myApp">
         <div ng-controller="myController">
           
@@ -58,6 +57,6 @@
         </table>
         </div>
     </div>
-  </body> -->
-<body></body>
+  </body>
+
 </html>
