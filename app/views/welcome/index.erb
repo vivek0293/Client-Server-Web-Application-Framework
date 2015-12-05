@@ -24,12 +24,12 @@
        var app = angular.module('myApp', []);
        app.controller('myController', ['$scope', '$http', '$interval',function($scope, $http, $interval) {
        var id = 1;
-       $interval(function(){
-       $http.get('/products/'+i).success(function(data) {
-       $scope.items = data;
-       id++;
-      });
-      },500);
+        $interval(function(){
+          $http.get('/products/'+id).success(function(data) {
+              $scope.items = data;
+              id++;
+          });
+        },500);
       
   
       }]);
