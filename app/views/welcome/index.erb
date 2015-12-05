@@ -43,9 +43,10 @@
         <div ng-controller="myController">
           
          <table> 
-          <tr ng-repeat="item in items">
+          <tr>
             
-          <td ng-repeat="(key, val) in item">{{age}}: {{val}}
+          <td ng-repeat="(key, val) in item">
+          {{key}}: {{val}}
           </tr>
         </table>
         </div>
