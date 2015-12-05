@@ -25,7 +25,7 @@
        app.controller('myController', ['$scope', '$http', '$interval',function($scope, $http, $interval) {
        var id = 1;
        $interval(function(){
-       $http.get('/products/'+id).success(function(data) {
+       $http.get('/products/'+i).success(function(data) {
        $scope.items = data;
        id++;
       });
