@@ -26,7 +26,7 @@
        var id = 1;
         $interval(function(){
           $http.get('/products/'+id).success(function(data) {
-              $scope.items.push(data);
+              $scope.items.append(data);
               id++;
               console.log(data)
           });
