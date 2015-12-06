@@ -25,15 +25,15 @@
     $.getJSON('/products/'+id,function (json) {
       var tr=[];
       for (var i = 0; i < json.length; i++) {
-        tr.push('<tr>');
-        tr.push("<td>" + json[i].age + "</td>");
-        tr.push("<td>" + json[i].sex + "</td>");
-        tr.push("<td>" + json[i].race + "</td>");
-        tr.push("<td>" + json[i].length_of_stay + "</td>");
-        tr.push("<td>" + json[i].stay_indicator + "</td>");
-        tr.push("<td>" + json[i].total_charges+ "</td>");
-        tr.push("<td>" + json[i].id+ "</td>");
-        tr.push('</tr>');
+        tr.append('<tr>');
+        tr.append("<td>" + json[i].age + "</td>");
+        tr.append("<td>" + json[i].sex + "</td>");
+        tr.append("<td>" + json[i].race + "</td>");
+        tr.append("<td>" + json[i].length_of_stay + "</td>");
+        tr.append("<td>" + json[i].stay_indicator + "</td>");
+        tr.append("<td>" + json[i].total_charges+ "</td>");
+        tr.append("<td>" + json[i].id+ "</td>");
+        tr.append('</tr>');
 
       }
       $('table').append($(tr.join('')));
