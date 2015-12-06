@@ -21,19 +21,22 @@
     <link rel="stylesheet" href="style.css" />
     <script data-require="angular.js@1.3.x" src="https://code.angularjs.org/1.3.15/angular.js" data-semver="1.3.15"></script>
     <script>
-       var app = angular.module('myApp', []);
-       app.controller('myController', ['$scope', '$http', '$interval',function($scope, $http, $interval) {
-       var id = 1;
-        $interval(function(){
-          $http.get('/products/'+id).success(function(data) {
-              $scope.items = angular.extend({}, data, {});
-              id++;
-              console.log(data)
-          });
-        },500);
-      
-  
-      }]);
+    $(document).ready(function () {
+    $.getJSON(url,function (json) {
+      var tr=[];
+      for (var i = 0; i < json.length; i++) {
+        tr.push('<tr>');
+        tr.push("<td>" + json[i].age + "</td>");
+        tr.push("<td>" + json[i].sex + "</td>");
+        tr.push("<td>" + json[i].race + "</td>");
+        tr.push("<td>" + json[i].length_of_stay + "</td>");
+        tr.push("<td>" + json[i].stay_indicator + "</td>");
+        tr.push("<td>" + json[i].total_charges+ "</td>");
+        tr.push("<td>" + json[i].id+ "</td>");
+        tr.push('</tr>');
+      }
+      $('table').append($(tr.join('')));
+    });
     
     </script>
   </head>
@@ -42,22 +45,29 @@
      <div ng-app="myApp">
         <div ng-controller="myController">
           
-         <table> 
-          <tr>
-          <th>AGE</th>
-          <th>SEX</th>
-          <th>RACE</th>
-          <th>LENGTH_OF_STAY</th>
-          <th>STAY_INDICATOR</th>
-          <th>TOTAL_CHARGES</th>
-          <th>ID</th>
-          </tr>
-          <tr ng-repeat="item in items">
-            <td ng-repeat="(key, val) in item track by $index">{{key}}: {{val}}</td>
-          </tr>
-          <!-- <tr ng-repeat="item in items"> 
-          <td ng-repeat="(key, val) in item">{{key}}: {{val}}</td>
-          </tr> -->
+         <table>
+         <thead>
+         <tr>
+            <th>AGE</th>
+            <th>SEX</th>
+            <th>RACE</th>
+            <th>length_of_stay</th>
+            <th>stay_indicator</th>
+            <th>total_charges</th>
+            <th>total_charges</th>
+         </tr>
+         </thead>
+        <tbody data-bind="foreach: teams">
+        <tr>
+            <td data-bind="text: age"></td>
+            <td data-bind="text: sex "></td>
+            <td data-bind="text: race "></td>
+            <td data-bind="text: length_of_stay"></td>
+            <td data-bind="text: total_charges "></td>
+            <td data-bind="text: length_of_stay "></td>
+            <td data-bind="text: id "></td>
+        </tr>
+        </tbody>
         </table>
         </div>
     </div>
