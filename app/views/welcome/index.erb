@@ -28,9 +28,9 @@
           $http.get('/products/'+id).success(function(data) {
               $scope.items = angular.extend(data, {});
               id++;
-              if(id===100)
+              if(id==150)
               {
-              $interval.cancel();
+                $interval.cancel();
               }
               console.log(data)
           });
