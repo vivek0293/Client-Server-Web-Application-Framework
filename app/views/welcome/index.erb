@@ -28,10 +28,6 @@
           $http.get('/products/'+id).success(function(data) {
               $scope.items = angular.extend(data, {});
               id++;
-              if(id==150)
-              {
-                $interval.cancel();
-              }
               console.log(data)
           });
         },500);
@@ -57,7 +53,7 @@
           <th>ID</th>
           </tr>
           <tr ng-repeat="item in items">
-            <td ng-repeat="(key, val) in item track by $index">{{val}}</td>
+            <td ng-repeat="(key, val) in item track by $index">{{key}}</td>
           </tr>
           <!-- <tr ng-repeat="item in items"> 
           <td ng-repeat="(key, val) in item">{{key}}: {{val}}</td>
