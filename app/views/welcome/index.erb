@@ -43,7 +43,7 @@
         <div ng-controller="myController">
           
          <table> 
-          <tr>
+          <tr ng-repeat="item in items">
             
           <td ng-repeat="(key, val) in item">
           {{key}}: {{val}}
