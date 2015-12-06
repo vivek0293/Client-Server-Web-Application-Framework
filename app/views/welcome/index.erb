@@ -52,11 +52,8 @@
           <th>TOTAL_CHARGES</th>
           <th>ID</th>
           </tr>
-          <tr>
-            <th ng-repeat="(key, val) in items[0] track by $index">{{key}}</th>
-          </tr>
           <tr ng-repeat="item in items">
-            <td ng-repeat="(key, val) in item track by $index">{{val}}</td>
+            <td ng-repeat="(key, val) in item track by $index">{{key}}: {{val}}</td>
           </tr>
           <!-- <tr ng-repeat="item in items"> 
           <td ng-repeat="(key, val) in item">{{key}}: {{val}}</td>
