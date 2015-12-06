@@ -42,7 +42,7 @@
      <div ng-app="myApp">
         <div ng-controller="myController">
           
-         <table> 
+         <table ng-repeat="item in items"> 
           <tr ng-repeat="item in items">
             
           <td ng-repeat="(key, val) in item">{{key}}: {{val}}</td>
