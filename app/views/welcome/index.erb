@@ -43,7 +43,7 @@
         <div ng-controller="myController">
           
          <table ng-repeat="item in items"> 
-          <tr>
+          <tr ng-repeat="item in items">
           <th>AGE</th>
           <th>SEX</th>
           <th>RACE</th>
@@ -52,7 +52,7 @@
           <th>TOTAL_CHARGES</th>
           <th>ID</th>
           </tr>
-          <tr> 
+          <trng-repeat="item in items"> 
           <td ng-repeat="(key, val) in item">{{key}}: {{val}}</td>
           </tr>
         </table>
