@@ -53,7 +53,7 @@
           <th>ID</th>
           </tr>
           <tr>
-            <th ng-repeat="(key, val) in items[0]">{{key}}</th>
+            <th ng-repeat="(key, val) in items[0] track by $index">{{key}}</th>
           </tr>
           <tr ng-repeat="item in items">
             <td ng-repeat="(key, val) in item track by $index">{{val}}</td>
