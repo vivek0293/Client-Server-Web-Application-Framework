@@ -62,17 +62,9 @@
             <th>total_charges</th>
          </tr>
          </thead>
-        <tbody data-bind="foreach: teams">
-        <tr>
-            <td data-bind="text: age"></td>
-            <td data-bind="text: sex "></td>
-            <td data-bind="text: race "></td>
-            <td data-bind="text: length_of_stay"></td>
-            <td data-bind="text: total_charges "></td>
-            <td data-bind="text: length_of_stay "></td>
-            <td data-bind="text: id "></td>
-        </tr>
-        </tbody>
+         <tr "item in tr">
+            <td "(key, val) in item track by $index">{{key}}: {{val}}</td>
+         </tr>
         </table>
         </div>
     </div>
