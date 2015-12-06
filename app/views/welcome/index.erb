@@ -33,6 +33,7 @@
         tr.push("<td>" + json[i].total_charges+ "</td>");
         tr.push("<td>" + json[i].id+ "</td>");
         tr.push('</tr>');
+        console.log(json)
       }
       $('table').append($(tr.join('')));
     });
