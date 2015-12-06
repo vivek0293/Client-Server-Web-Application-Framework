@@ -20,7 +20,8 @@
     
     <script>
     $(document).ready(function () {
-    $.getJSON(url,function (json) {
+    var id = 1;
+    $.getJSON('/products/'+id,function (json) {
       var tr=[];
       for (var i = 0; i < json.length; i++) {
         tr.push('<tr>');
