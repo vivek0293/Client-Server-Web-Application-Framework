@@ -45,7 +45,7 @@
          <table> 
           <tr ng-repeat="item in items">
             
-          <td>{{item.age}}</td>
+          <td ng-repeat="item in items">{{item.age}}</td>
           <td>{{item.sex}}</td>
           <td>{{item.race}}</td>
           <td>{{item.length_of_stay}}</td>
