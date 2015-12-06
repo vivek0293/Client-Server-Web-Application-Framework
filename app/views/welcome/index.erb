@@ -52,9 +52,15 @@
           <th>TOTAL_CHARGES</th>
           <th>ID</th>
           </tr>
-          <tr ng-repeat="item in items"> 
-          <td ng-repeat="(key, val) in item"></td>
+          <tr>
+            <th ng-repeat="(key, val) in items[0]">{{key}}</th>
           </tr>
+          <tr ng-repeat="item in items">
+            <td ng-repeat="(key, val) in item">{{val}}</td>
+          </tr>
+          <!-- <tr ng-repeat="item in items"> 
+          <td ng-repeat="(key, val) in item">{{key}}: {{val}}</td>
+          </tr> -->
         </table>
         </div>
     </div>
