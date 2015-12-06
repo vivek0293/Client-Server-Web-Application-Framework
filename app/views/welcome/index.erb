@@ -21,6 +21,7 @@
     <script>
     $(document).ready(function () {
     var id = 1;
+    setInterval(function(){
     $.getJSON('/products/'+id,function (json) {
       var tr=[];
       for (var i = 0; i < json.length; i++) {
@@ -35,9 +36,10 @@
         tr.push('</tr>');
 
       }
-      console.log(json)
-      id++;
       $('table').append($(tr.join('')));
+      id++;
+      console.log(json)
+    },500); 
     });
     });
     
