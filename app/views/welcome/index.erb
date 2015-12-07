@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="myApp">
+<html>
 
   <head>
   <style>
@@ -17,60 +17,52 @@
   </style>
     <meta charset="utf-8" />
     <title>Project 3</title>
-    <script>document.write('<base href="' + document.location + '" />');</script>
-    <link rel="stylesheet" href="style.css" />
-    <script data-require="angular.js@1.3.x" src="https://code.angularjs.org/1.3.15/angular.js" data-semver="1.3.15"></script>
+    
     <script>
-       var app = angular.module('myApp', []);
-       app.controller('myController', ['$scope', '$http', '$interval',function($scope, $http, $interval) {
-       var id = 1;
-       var items = {}
-        $interval(function(){
-          $http.get('/products/'+id).success(function(data) {
-              var dat = angular.toJson(data);
-              $scope.items = angular.append(dat);
-              id++;
-              console.log(dat)
-          });
-        },500);
-      
-  
-      }]);
+    $(document).ready(function () {
+    var id = 1;
+    setInterval(function(){
+    $.getJSON('/products/'+id,function (json) {
+      var tr=[];
+      for (var i = 0; i < json.length; i++) {
+        tr.append($('<tr>'));
+        tr.append($("<td>" + json[i].age + "</td>"));
+        tr.append($("<td>" + json[i].sex + "</td>"));
+        tr.append($("<td>" + json[i].race + "</td>"));
+        tr.append($("<td>" + json[i].length_of_stay + "</td>"));
+        tr.append($("<td>" + json[i].stay_indicator + "</td>"));
+        tr.append($("<td>" + json[i].total_charges+ "</td>"));
+        tr.append($("<td>" + json[i].id+ "</td>"));
+        tr.append($('</tr>'));
+
+      }
+      $('table').append($(tr.join('')));
+      id++;
+      console.log(json)
+    },500); 
+    });
+    });
     
     </script>
   </head>
 
-  <body ng-controller="myController">
-     <div ng-app="myApp">
-        <div ng-controller="myController">
+  <body>
+     <div >
+        <div >
           
-         <table> 
-          <tr>
-          <th>AGE</th>
-          <th>SEX</th>
-          <th>RACE</th>
-          <th>LENGTH_OF_STAY</th>
-          <th>STAY_INDICATOR</th>
-          <th>TOTAL_CHARGES</th>
-          <th>ID</th>
-          </tr>
-          <!-- <tr ng-repeat="item in items">
-            <td ng-repeat="(key, val) in item track by $index">{{key}}</td>
-          </tr> -->
-          <tr ng-repeat="item in items"> 
-          <td>{{ item.age}}</td>
-          <td>{{ item.sex}}</td>
-          
-          <td>{{ item.race}}</td>
-          
-          <td>{{ item.length_of_stay}}</td>
-          
-          <td>{{ item.stay_indicator}}</td>
-
-          <td>{{ item.total_charges}}</td>
-          
-          <td>{{ item.id}}</td>
-          </tr>
+         <table>
+         <thead>
+         <tr>
+            <th>AGE</th>
+            <th>SEX</th>
+            <th>RACE</th>
+            <th>length_of_stay</th>
+            <th>stay_indicator</th>
+            <th>total_charges</th>
+            <th>total_charges</th>
+         </tr>
+         </thead>
+         
         </table>
         </div>
     </div>
