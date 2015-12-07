@@ -21,9 +21,10 @@
     <script>
     $(document).ready(function () {
     var id = 1;
+    var a = {}
     setInterval(function(){
     $.getJSON('/products/'+id,function (json) {
-      var a = JSON.stringify(json)
+      a = JSON.stringify(json)
       console.log(a)
       // var obj = jQuery.parseJSON(json);
       // console.log(obj)
