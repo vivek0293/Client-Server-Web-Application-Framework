@@ -23,7 +23,8 @@
     var id = 1;
     setInterval(function(){
     $.getJSON('/products/'+id,function (json) {
-      console.log(json)
+      var a = JSON.stringify(json)
+      console.log(a)
       // var obj = jQuery.parseJSON(json);
       // console.log(obj)
       var tr=[];
