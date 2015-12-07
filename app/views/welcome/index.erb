@@ -15,15 +15,14 @@
       background-color: #ffffff;
     }
 
-    .fade.ng-enter {
-      transition:50.5s linear all;
-      opacity:0;
+    .highlight.ng-enter {
+      background-color: #red;
     }
 
 /* The finishing CSS styles for the enter animation */
-    .fade.ng-enter.ng-enter-active {
+    /*.fade.ng-enter.ng-enter-active {
       opacity:1;
-    }
+    }*/
 
     
   </style>
@@ -75,7 +74,7 @@
           <!-- <tr ng-repeat="item in items">
             <td ng-repeat="(key, val) in item track by $index">{{key}}:{{val}}</td>
           </tr> -->
-          <tr class="fade" ng-repeat="item in items track by $index"> 
+          <tr class="highlight" ng-repeat="item in items track by $index"> 
           <td>{{ item["age"]}}</td>
 
           <td>{{ item["sex"]}}</td>
