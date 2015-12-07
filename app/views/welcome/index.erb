@@ -29,8 +29,8 @@
           $http.get('/products/'+id+'.json').success(function(data) {
               $scope.convert = data;
               console.log($scope.convert)
-              ///$scope.items = angular.extend({},$scope.convert);
-              $scope.items = $scope.convert
+              $scope.items = angular.extend({},$scope.convert);
+              ///$scope.items = $scope.convert
               id++;
               
           });
@@ -46,7 +46,7 @@
      <div ng-app="myApp">
         <div ng-controller="myController">
           
-         <table> 
+        <table> 
           <tr>
           <th>AGE</th>
           <th>SEX</th>
