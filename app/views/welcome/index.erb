@@ -27,11 +27,9 @@
         $interval(function(){
           $http.get('/products/'+id).success(function(data) {
               var dat = angular.toJson(data);
-              $scope.items.push(dat);
-              // $scope.items["JSONObject"] = $scope.item
-              console.log(dat)
+              $scope.items = angular.extend(dat, {});
               id++;
-              
+              console.log(dat)
           });
         },500);
       
@@ -56,7 +54,7 @@
           <th>ID</th>
           </tr>
           <!-- <tr ng-repeat="item in items">
-            <td ng-repeat="(key, val) in item track by $index">{{key}}:{{val}}</td>
+            <td ng-repeat="(key, val) in item track by $index">{{key}}</td>
           </tr> -->
           <tr ng-repeat="item in items"> 
           <td ng-repeat="(key, val) in item">{{key}}: {{val}}</td>
