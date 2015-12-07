@@ -33,7 +33,7 @@
               $scope.items.push($scope.convert);
               id++;
               if ($scope.items.length === 20)
-                $scope.items.splice(id, 1);
+                $scope.items.splice(index, 1);
           });
         },500);
       
@@ -60,7 +60,7 @@
           <!-- <tr ng-repeat="item in items">
             <td ng-repeat="(key, val) in item track by $index">{{key}}:{{val}}</td>
           </tr> -->
-          <tr ng-repeat="item in items"> 
+          <tr ng-repeat="item in items track by $index"> 
           <td>{{ item["age"]}}</td>
 
           <td>{{ item["sex"]}}</td>
