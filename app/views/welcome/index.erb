@@ -27,7 +27,7 @@
        
         $interval(function(){
           $http.get('/products/'+id+'.json').success(function(data) {
-              $scope.convert = data;
+              $scope.convert = angular.toJson(data);
               console.log($scope.convert)
               ///$scope.items = angular.extend({},$scope.convert);
               $scope.items = $scope.convert
