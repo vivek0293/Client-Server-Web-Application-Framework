@@ -60,19 +60,19 @@
             <td ng-repeat="(key, val) in item track by $index">{{key}}:{{val}}</td>
           </tr> -->
           <tr ng-repeat="item in items"> 
-          <td>{{ items["age"]}}</td>
+          <td>{{ item["age"]}}</td>
 
-          <td>{{ items["sex"]}}</td>
+          <td>{{ item["sex"]}}</td>
           
-          <td>{{ items["race"]}}</td>
+          <td>{{ item["race"]}}</td>
           
-          <td>{{ items["length_of_stay"]}}</td>
+          <td>{{ item["length_of_stay"]}}</td>
           
-          <td>{{ items["stay_indicator"]}}</td>
+          <td>{{ item["stay_indicator"]}}</td>
 
-          <td>{{ items["total_charges"]}}</td>
+          <td>{{ item["total_charges"]}}</td>
           
-          <td>{{ items["id"]}}</td>
+          <td>{{ item["id"]}}</td>
   
           </tr>
         </table>
