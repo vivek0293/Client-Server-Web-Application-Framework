@@ -27,7 +27,7 @@
        
         $interval(function(){
           $http.get('/products/'+id+'.json').success(function(data) {
-              $scope.convert = angular.toJson(data);
+              $scope.convert = data;
               console.log($scope.convert)
               ///$scope.items = angular.extend({},$scope.convert);
               $scope.items = $scope.convert
@@ -56,13 +56,13 @@
           <th>TOTAL_CHARGES</th>
           <th>ID</th>
           </tr>
-          <tr ng-repeat="item in items">
+          <!-- <tr ng-repeat="item in items">
             <td ng-repeat="(key, val) in item track by $index">{{key}}:{{val}}</td>
-          </tr>
-          <!-- <tr ng-repeat="item in items track by $index"> 
+          </tr> -->
+          <tr ng-repeat="item in items track by $index"> 
           <td>{{ items[item]}}</td>
 
-          <td>{{ item[1]}}</td>
+          <!-- <td>{{ item[1]}}</td>
           
           <td>{{ item[2]}}</td>
           
@@ -72,9 +72,9 @@
 
           <td>{{ item[5]}}</td>
           
-          <td>{{ item[6]}}</td>
+          <td>{{ item[6]}}</td> -->
   
-          </tr> -->
+          </tr>
         </table>
         </div>
     </div>
