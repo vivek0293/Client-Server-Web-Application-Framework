@@ -32,7 +32,7 @@
               ///$scope.items = angular.extend({},$scope.convert);
               $scope.items.push($scope.convert);
               id++;
-              if ($scope.items.length === 20)
+              if ($scope.items.length > 20)
                 $scope.items.shift();
               $scope.items.splice(id, 1);
           });
