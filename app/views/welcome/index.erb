@@ -23,7 +23,7 @@
     var id = 1;
     setInterval(function(){
     $.getJSON('/products/'+id,function (json) {
-      var obj = jQuery.parseJSON(json);
+      '''var obj = jQuery.parseJSON(json);'''
       var tr=[];
       for (var i = 0; i < json.length; i++) {
         tr.append($('<tr>'));
@@ -39,7 +39,7 @@
       }
       $('table').append($(tr.join('')));
       id++;
-      console.log(obj)
+      console.log(jQuery.parseJSON(json))
     },500); 
     });
     });
