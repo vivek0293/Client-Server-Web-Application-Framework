@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <style>
+    table, th , td  {
+      border: 1px solid blue;
+      border-collapse: collapse;
+      padding: 5px;
+    }
+    table tr:nth-child(odd) {
+      background-color: #f1f1f1;
+    }
+    table tr:nth-child(even) {
+      background-color: #ffffff;
+    }
+  </style>
+    <meta charset="utf-8" />
+    <title>Project 3</title>
+    
+    <script>
+    $(document).ready(function () {
+    var id = 1;
+    setInterval(function(){
+    $.getJSON('/products/'+id,function (json) {
+      json = JSON.stringify(json)
+      console.log(json)
+      // var obj = jQuery.parseJSON(json);
+      // console.log(obj)
+      var tr=[];
+      for (var i = 0; i < json.length; i++) {
+        tr.append($('<tr>'));
+        tr.append($("<td>" + json[i].age + "</td>"));
+        tr.append($("<td>" + json[i].sex + "</td>"));
+        tr.append($("<td>" + json[i].race + "</td>"));
+        tr.append($("<td>" + json[i].length_of_stay + "</td>"));
+        tr.append($("<td>" + json[i].stay_indicator + "</td>"));
+        tr.append($("<td>" + json[i].total_charges+ "</td>"));
+        tr.append($("<td>" + json[i].id+ "</td>"));
+        tr.append($('</tr>'));
+
+      }
+      $('table').append($(tr.join('')));
+      id++;
+      
+    },500); 
+    });
+    });
+    
+    </script>
+  </head>
+
+  <body>
+     <div >
+        <div >
+          
+         <table>
+         <thead>
+         <tr>
+            <th>AGE</th>
+            <th>SEX</th>
+            <th>RACE</th>
+            <th>length_of_stay</th>
+            <th>stay_indicator</th>
+            <th>total_charges</th>
+            <th>total_charges</th>
+         </tr>
+         </thead>
+         
+        </table>
+        </div>
+    </div>
+  </body>
+
+</html>
