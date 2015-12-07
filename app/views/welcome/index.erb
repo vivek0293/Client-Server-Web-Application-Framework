@@ -60,8 +60,8 @@
             <td ng-repeat="(key, val) in item track by $index">{{key}}:{{val}}</td>
           </tr> -->
           <tr ng-repeat="item in items track by $index"> 
-          <td>{{ item["age"]}}</td>
-
+          <td>{{ items[item]}}</td>
+<!--
           <td>{{ item[1]}}</td>
           
           <td>{{ item[2]}}</td>
@@ -73,6 +73,7 @@
           <td>{{ item[5]}}</td>
           
           <td>{{ item[6]}}</td>
+  -->
           </tr>
         </table>
         </div>
