@@ -28,15 +28,15 @@
       // var obj = jQuery.parseJSON(json);
       // console.log(obj)
       var tr=[];
-      for (var i = 0; i < json.length; i++) {
+      for (var i = 0; i < a.length; i++) {
         tr.append($('<tr>'));
-        tr.append($("<td>" + json[i].age + "</td>"));
-        tr.append($("<td>" + json[i].sex + "</td>"));
-        tr.append($("<td>" + json[i].race + "</td>"));
-        tr.append($("<td>" + json[i].length_of_stay + "</td>"));
-        tr.append($("<td>" + json[i].stay_indicator + "</td>"));
-        tr.append($("<td>" + json[i].total_charges+ "</td>"));
-        tr.append($("<td>" + json[i].id+ "</td>"));
+        tr.append($("<td>" + a[i].age + "</td>"));
+        tr.append($("<td>" + a[i].sex + "</td>"));
+        tr.append($("<td>" + a[i].race + "</td>"));
+        tr.append($("<td>" + a[i].length_of_stay + "</td>"));
+        tr.append($("<td>" + a[i].stay_indicator + "</td>"));
+        tr.append($("<td>" + a[i].total_charges+ "</td>"));
+        tr.append($("<td>" + a[i].id+ "</td>"));
         tr.append($('</tr>'));
 
       }
