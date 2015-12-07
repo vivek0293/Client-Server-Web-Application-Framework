@@ -27,7 +27,7 @@
         $interval(function(){
           $http.get('/products/'+id).success(function(data) {
               var dat = angular.toJson(data);
-              $scope.items = angular.extend(dat, {});
+              $scope.items = angular.extend(dat);
               id++;
               console.log(dat)
           });
