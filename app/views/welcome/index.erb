@@ -14,13 +14,16 @@
     table tr:nth-child(even) {
       background-color: #ffffff;
     }
-    .animate-enter { 
-      background-color: #f1f1f1;
+    .fade.ng-enter {
+      transition:0.5s linear all;
+      opacity:0;
     }
-    /* The finishing CSS styles for the enter animation */
-    .animate-leave { 
-      background-color: red;
-    } 
+
+/* The finishing CSS styles for the enter animation */
+    .fade.ng-enter.ng-enter-active {
+      opacity:1;
+    }
+
   </style>
     <meta charset="utf-8" />
     <title>Project 3</title>
@@ -70,7 +73,7 @@
           <!-- <tr ng-repeat="item in items">
             <td ng-repeat="(key, val) in item track by $index">{{key}}:{{val}}</td>
           </tr> -->
-          <tr ng-animate="'animate'" ng-repeat="item in items track by $index"> 
+          <tr class="fade" ng-repeat="item in items track by $index"> 
           <td>{{ item["age"]}}</td>
 
           <td>{{ item["sex"]}}</td>
