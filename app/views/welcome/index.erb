@@ -14,14 +14,19 @@
     table tr:nth-child(even) {
       background-color: #ffffff;
     }
-    .highlight.ng-enter {
-      background-color:green;
-  
+    .animate-enter { 
+      -webkit-animation: enter 600ms cubic-bezier(0.390, 0.575, 0.565, 1.000);
+      animation: enter 600ms cubic-bezier(0.390, 0.575, 0.565, 1.000);
+      display: block;
+      position: relative;
     }
     /* The finishing CSS styles for the enter animation */
-    .highlight.ng-enter.ng-enter-active {
-      background-color:yellow;
-    }
+    .animate-leave { 
+      -webkit-animation: leave 600ms cubic-bezier(0.390, 0.575, 0.565, 1.000);
+      animation: leave 600ms cubic-bezier(0.390, 0.575, 0.565, 1.000);
+      display: block;
+      position: relative;
+    } 
   </style>
     <meta charset="utf-8" />
     <title>Project 3</title>
@@ -71,7 +76,7 @@
           <!-- <tr ng-repeat="item in items">
             <td ng-repeat="(key, val) in item track by $index">{{key}}:{{val}}</td>
           </tr> -->
-          <tr class="highlight" ng-repeat="item in items track by $index"> 
+          <tr ng-animate="'animate'" ng-repeat="item in items track by $index"> 
           <td>{{ item["age"]}}</td>
 
           <td>{{ item["sex"]}}</td>
