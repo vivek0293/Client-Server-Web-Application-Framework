@@ -55,23 +55,23 @@
           <th>TOTAL_CHARGES</th>
           <th>ID</th>
           </tr>
-          <tr ng-repeat="item in items">
+          <!-- <tr ng-repeat="item in items">
             <td ng-repeat="(key, val) in item track by $index">{{key}}:{{val}}</td>
-          </tr>
-          <!-- <tr ng-repeat="item in items"> 
-          <td>{{ item.age}}</td>
-          <td>{{ item.sex}}</td>
-          
-          <td>{{ item.race}}</td>
-          
-          <td>{{ item.length_of_stay}}</td>
-          
-          <td>{{ item.stay_indicator}}</td>
-
-          <td>{{ item.total_charges}}</td>
-          
-          <td>{{ item.id}}</td>
           </tr> -->
+          <tr ng-repeat="item in items"> 
+          <td>{{ item.[0]}}</td>
+          <td>{{ item.[1]}}</td>
+          
+          <td>{{ item.[2]}}</td>
+          
+          <td>{{ item.[3]}}</td>
+          
+          <td>{{ item.[4]}}</td>
+
+          <td>{{ item.[5]}}</td>
+          
+          <td>{{ item.[6]}}</td>
+          </tr>
         </table>
         </div>
     </div>
