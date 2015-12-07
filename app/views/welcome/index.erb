@@ -24,6 +24,7 @@
        var app = angular.module('myApp', []);
        app.controller('myController', ['$scope', '$http', '$interval',function($scope, $http, $interval) {
        var id = 1;
+       var items = {}
         $interval(function(){
           $http.get('/products/'+id).success(function(data) {
               var dat = angular.toJson(data);
