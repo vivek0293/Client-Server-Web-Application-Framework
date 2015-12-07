@@ -16,7 +16,7 @@
     }
 
     .highlight.ng-enter {
-      transition:0.1s linear all;
+      transition:0.5s linear all;
       background-color: red;
     }
 
@@ -46,8 +46,8 @@
               ///$scope.items = angular.extend({},$scope.convert);
               $scope.items.push($scope.convert);
               id++;
-              // if ($scope.items.length > 20)
-              //   $scope.items.shift();
+              if ($scope.items.length > 20)
+                $scope.items.shift();
               //$scope.items.splice(id, 1);
           });
         },500);
