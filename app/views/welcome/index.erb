@@ -26,10 +26,11 @@
        var id = 1;
         $interval(function(){
           $http.get('/products/'+id).success(function(data) {
-              $scope.item = data;
-              $scope.items["JSONObject"] = $scope.item
-              id++;
+              // $scope.item = data;
+              // $scope.items["JSONObject"] = $scope.item
               console.log(data)
+              id++;
+              
           });
         },500);
       
