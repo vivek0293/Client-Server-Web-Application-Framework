@@ -24,13 +24,13 @@
        var app = angular.module('myApp', []);
        app.controller('myController', ['$scope', '$http', '$interval',function($scope, $http, $interval) {
        var id = 1;
-       
+       $scope.items = [];
         $interval(function(){
           $http.get('/products/'+id+'.json').success(function(data) {
               $scope.convert = data;
               console.log($scope.convert)
               ///$scope.items = angular.extend({},$scope.convert);
-              $scope.items = $scope.convert
+              $scope.items.push($scope.convert);
               id++;
               
           });
@@ -59,7 +59,7 @@
           <!-- <tr ng-repeat="item in items">
             <td ng-repeat="(key, val) in item track by $index">{{key}}:{{val}}</td>
           </tr> -->
-          <tr> 
+          <tr ng-repeat="item in items"> 
           <td>{{ items["age"]}}</td>
 
           <td>{{ items["sex"]}}</td>
