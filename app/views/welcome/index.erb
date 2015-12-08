@@ -51,7 +51,7 @@
                 ///$scope.items.shift();
                 $scope.items.splice(data, 1);
                 $interval(function(){
-                  $scope.items.push($scope.convert);},500);
+                  $scope.items.push($scope.convert);},100);
                 id++;
               }
               else
