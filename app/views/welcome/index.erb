@@ -50,7 +50,8 @@
               {
                 ///$scope.items.shift();
                 $scope.items.splice(data, 1);
-                $scope.items.push($scope.convert);
+                $interval(function(){
+                  $scope.items.push($scope.convert);},500);
                 id++;
               }
               else
