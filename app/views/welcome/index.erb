@@ -43,10 +43,10 @@
           $http.get('/products/'+id+'.json').success(function(data) {
               $scope.convert = data;
               console.log($scope.convert)
-              ///$scope.items = angular.extend({},$scope.convert);
-              //$scope.items.push($scope.convert);
-              //id++;
-              if ($scope.items.length > 19)
+              
+              $scope.items.push($scope.convert);
+              id++;
+              if ($scope.items.length > 20)
               {
                 ///$scope.items.shift();
                 $scope.items.splice(data, 1);
@@ -56,11 +56,7 @@
                 },10);
                 
               }
-              else
-              {
-                $scope.items.push($scope.convert);
-                id++;
-              }
+              
 
           });
         },500);
