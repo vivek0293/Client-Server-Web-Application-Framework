@@ -15,18 +15,14 @@
       background-color: #ffffff;
     }
 
-    .my-repeat-animation.ng-enter {
-      left:-10px;
-      opacity:0;
-      /*transition:0.5s linear all;
-      background-color: red;*/
+    .highlight.ng-enter {
+      transition:0.5s linear all;
+      background-color: red;
     }
 
 /* The finishing CSS styles for the enter animation */
-    .my-repeat-animation.ng-enter.ng-enter-active {
-      left:0px;
-      opacity:1;
-      /*background-color: white;*/
+    .highlight.ng-enter.ng-enter-active {
+      background-color: white;
     }
 
     
@@ -51,8 +47,8 @@
               $scope.items.push($scope.convert);
               id++;
               if ($scope.items.length > 20)
-                $scope.items.shift();
-              //$scope.items.splice(id, 1);
+                ///$scope.items.shift();
+                $scope.items.splice(data, 1);
           });
         },500);
       
@@ -79,7 +75,7 @@
           <!-- <tr ng-repeat="item in items">
             <td ng-repeat="(key, val) in item track by $index">{{key}}:{{val}}</td>
           </tr> -->
-          <tr class="my-repeat-animation" ng-repeat="item in items track by $index"> 
+          <tr class="highlight" ng-repeat="item in items track by $index"> 
           <td>{{ item["age"]}}</td>
 
           <td>{{ item["sex"]}}</td>
